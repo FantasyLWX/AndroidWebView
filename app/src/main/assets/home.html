@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=no" />
+  </head>
+  <style>
+    .app {
+      font-size: 30px;
+      margin-bottom: 50px;
+    }
+    .btn {
+      text-align: center;
+      background: #d8d8d8;
+      color: #222;
+      padding: 20px;
+      margin: 50px;
+      font-size: 30px;
+      border-radius: 4px;
+      box-shadow: 4px 2px 10px #999;
+    }
+    .btn:active {
+      opacity: 0.7;
+      box-shadow: 4px 2px 10px #555;
+    }
+  </style>
+  <body>
+    <div class="app">
+      <br /><br />
+      <span>上传文件：</span><input type="file" /> <br /><br />
+      <span>上传图片：</span><input type="file" accept="image/*" /> <br /><br />
+      <span>上传视频：</span><input type="file" accept="video/*" /> <br /><br />
+      <br /><br />
+      <a href="index.html">初始页，index.html</a>
+      <br /><br />
+      <a href="file:///android_asset/index.html">初始页，file:///android_asset/index.html</a>
+      <br /><br />
+      <br /><br />
+      <a href="https://dldir1.qq.com/weixin/android/weixin7010android1580.apk">微信客户端（请点击这里下载）</a>
+      <br /><br />
+      <a href="tel:18800000000">打电话：18800000000</a>
+      <br /><br />
+      <a href="sms:18800000000">发短信：18800000000</a>
+      <br /><br />
+      <a href="mailto:i_am_fantasy@163.com">发邮件：i_am_fantasy@163.com</a>
+      <br /><br />
+      <br /><br />
+      <div class="btn" onclick="toExit()">退出</div>
+      <div class="btn" onclick="openNewWebView()">打开新的WebView来加载网页<br />（这里以“百度地图”为例）</div>
+      <div class="btn" onclick="openBrowser()">调用手机浏览器加载网页<br />（这里以“百度地图”为例）</div>
+    </div>
+    <script type="text/javascript">
+      /* 监听手机的返回键，如果H5页面要拦截，则返回true；如果不拦截，则返回false */
+      function phoneBackButtonListener() {
+        console.log('点击了手机的返回键，但是由原生来处理')
+        return false
+      }
+
+      /* 退出 */
+      function toExit() {
+        window.android.exit()
+      }
+
+      /* 使用新的WebView加载网页 */
+      function openNewWebView() {
+        window.android.toNewWebView('https://map.baidu.com')
+      }
+
+      /* 调用手机浏览器加载网页 */
+      function openBrowser() {
+        window.android.openAppBrowser('https://map.baidu.com')
+      }
+    </script>
+  </body>
+</html>

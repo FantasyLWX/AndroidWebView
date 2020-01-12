@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">AndroidWebView</string>
+
+    <!-- 共用的 -->
+    <string name="dialog_title_download_file">文件下载中</string>
+    <string name="btn_confirm">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_cancel_download">取消下载</string>
+    <string name="load_failed">加载失败</string>
+    <string name="can_not_open_file">此格式文件无法打开。</string>
+    <string name="choose_app">选择要使用的应用</string>
+    <string name="request_install_apk">安装应用需要打开未知来源权限，请去设置中开启权限。</string>
+    <string name="request_install_apk_fail">未开启安装未知来源应用权限，安装应用失败</string>
+    <string name="error_ssl_cert_invalid">当前网站的证书来自不可信任的授权中心，是否信任并继续访问？</string>
+    <string name="warning_network">点击屏幕刷新页面</string>
+
+    <!-- 主界面 -->
+    <string name="main_web_view">包含所有功能的WebView</string>
+    <string name="main_no_tel">该设备没有电话功能</string>
+    <string name="main_no_sms">该设备没有短信功能</string>
+    <string name="main_no_mail">该设备没有邮箱功能</string>
+    <string name="main_permission_scan">需要获取(相机)权限，以保证扫码功能正常使用。</string>
+    <string name="main_permission_scan_1">请在【设置-应用-%1$s-权限】中开启(相机)权限，以保证扫码功能正常使用。</string>
+    <string name="main_permission_photo_upload">需要获取(相机)权限，以保证拍照上传功能正常使用。</string>
+    <string name="main_permission_photo_upload_1">请在【设置-应用-%1$s-权限】中开启(相机)权限，以保证拍照上传功能正常使用。</string>
+    <string name="main_permission_location">需要获取(定位)权限，以保证定位功能正常使用。</string>
+    <string name="main_permission_location_1">请在【设置-应用-%1$s-权限】中开启(定位)权限，以保证定位功能正常使用。</string>
+    <string name="main_download_file">是否下载此文件“%1$s”。</string>
+
+    <!-- 扫码 -->
+    <string name="scan_hint">将二维码放入框内，即可自动扫描</string>
+    <string name="scan_error">打开相机出错，请重新打开。</string>
+
+</resources>

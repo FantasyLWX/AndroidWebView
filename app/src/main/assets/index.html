@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>初始页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=no" />
+  </head>
+  <style>
+    .app {
+      font-size: 30px;
+      margin-bottom: 50px;
+    }
+    .btn {
+      text-align: center;
+      background: #d8d8d8;
+      color: #222;
+      padding: 20px;
+      margin: 50px;
+      font-size: 30px;
+      border-radius: 4px;
+      box-shadow: 4px 2px 10px #999;
+    }
+    .btn:active {
+      opacity: 0.7;
+      box-shadow: 4px 2px 10px #555;
+    }
+  </style>
+  <body>
+    <div class="app">
+      <div class="btn" onclick="toHome()">首页</div>
+      <div class="btn" onclick="toExit()">退出</div>
+      <div class="btn" onclick="openNewWebView()">打开新的WebView来加载网页<br />（这里以“爱奇艺”为例）</div>
+      <div class="btn" onclick="openBrowser()">调用手机浏览器加载网页<br />（这里以“爱奇艺”为例）</div>
+      <div class="btn" onclick="toScanCode()">扫码</div>
+    </div>
+    <script type="text/javascript">
+      /* 监听手机的返回键，如果H5页面要拦截，则返回true；如果不拦截，则返回false */
+      function phoneBackButtonListener() {
+        console.log('点击了手机的返回键，但是由原生来处理')
+        return false
+      }
+
+      /* 首页 */
+      function toHome() {
+        window.location.href = 'home.html'
+        //window.open('home.html')
+      }
+
+      /* 退出 */
+      function toExit() {
+        window.android.exit()
+      }
+
+      /* 使用新的WebView加载网页 */
+      function openNewWebView() {
+        window.android.toNewWebView('http://www.iqiyi.com')
+      }
+
+      /* 调用手机浏览器加载网页 */
+      function openBrowser() {
+        window.android.openAppBrowser('http://www.iqiyi.com')
+      }
+
+      /* 扫码 */
+      function toScanCode() {
+        window.android.scanCode()
+      }
+
+      /* 扫码结果 */
+      function scanResult(result) {
+        console.log(result)
+        alert(result)
+      }
+    </script>
+  </body>
+</html>
