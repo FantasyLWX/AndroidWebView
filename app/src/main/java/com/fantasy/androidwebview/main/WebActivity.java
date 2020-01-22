@@ -353,7 +353,8 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                     return;
                 }
                 // 加载网页出错，例如：404、没有网络
-                Log.d(Constant.TAG, mClassName + " onReceivedError failingUrl : " + failingUrl);
+                Log.d(Constant.TAG, mClassName + " onReceivedError errorCode : " + errorCode
+                        + "\ndescription : " + description + "\nfailingUrl : " + failingUrl);
                 mUrl = failingUrl;
                 mRlWarning.setVisibility(View.VISIBLE);
                 mWebView.setVisibility(View.GONE);
@@ -366,7 +367,8 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                 super.onReceivedError(view, request, error);
                 // 加载网页出错，例如：404、没有网络
                 mUrl = request.getUrl().toString();
-                Log.d(Constant.TAG, mClassName + " onReceivedError url : " + mUrl);
+                Log.d(Constant.TAG, mClassName + " onReceivedError errorCode : " + error.getErrorCode()
+                        + "\ndescription : " + error.getDescription() + "\nurl : " + mUrl);
                 mRlWarning.setVisibility(View.VISIBLE);
                 mWebView.setVisibility(View.GONE);
             }

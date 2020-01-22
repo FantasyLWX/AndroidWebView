@@ -13,7 +13,7 @@ import com.fantasy.androidwebview.base.BaseActivity;
  * 主界面
  * <pre>
  *     author  : Fantasy
- *     version : 1.0, 2020-01-07
+ *     version : 1.0, 2020-01-22
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -38,6 +38,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.iv_title_bar_back).setVisibility(View.GONE);
         ((TextView) findViewById(R.id.tv_title_bar_title)).setText(R.string.app_name);
         findViewById(R.id.cd_main_web_view).setOnClickListener(this);
+        findViewById(R.id.cd_main_clear_cache).setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +54,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.cd_main_web_view:
                 WebActivity.actionStart(mContext, "file:///android_asset/index.html");
+                break;
+            case R.id.cd_main_clear_cache:
+                ClearCacheActivity.actionStart(mContext);
                 break;
             default:
                 break;

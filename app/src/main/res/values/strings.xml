@@ -31,4 +31,9 @@
     <string name="scan_hint">将二维码放入框内，即可自动扫描</string>
     <string name="scan_error">打开相机出错，请重新打开。</string>
 
+    <!-- 清除缓存 -->
+    <string name="clear_cache_title">清除WebView缓存</string>
+    <string name="clear_cache_clear">清除缓存</string>
+    <string name="clear_cache_web">打开网页</string>
+
 </resources>
