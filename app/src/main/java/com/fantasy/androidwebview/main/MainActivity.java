@@ -13,7 +13,7 @@ import com.fantasy.androidwebview.base.BaseActivity;
  * 主界面
  * <pre>
  *     author  : Fantasy
- *     version : 1.0, 2020-01-22
+ *     version : 1.3, 2020-02-13
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ((TextView) findViewById(R.id.tv_title_bar_title)).setText(R.string.app_name);
         findViewById(R.id.cd_main_web_view).setOnClickListener(this);
         findViewById(R.id.cd_main_clear_cache).setOnClickListener(this);
+        findViewById(R.id.cd_main_web_view_video).setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +58,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.cd_main_clear_cache:
                 ClearCacheActivity.actionStart(mContext);
+                break;
+            case R.id.cd_main_web_view_video:
+                VideoActivity.actionStart(mContext, "http://www.iqiyi.com");
                 break;
             default:
                 break;

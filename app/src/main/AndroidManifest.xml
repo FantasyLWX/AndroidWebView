@@ -33,7 +33,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.MainActivity" />
-        <activity android:name=".main.WebActivity" />
+        <activity
+            android:name=".main.WebActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".main.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".main.ClearCacheActivity" />
         <activity android:name=".scan.ScanActivity" />
 

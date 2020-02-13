@@ -68,7 +68,7 @@ import java.util.Locale;
  * 包含所有功能的WebView
  * <pre>
  *     author  : Fantasy
- *     version : 1.0, 2020-01-12
+ *     version : 1.1, 2020-02-13
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -493,7 +493,7 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
             public void onShowCustomView(View view, CustomViewCallback callback) {
                 // 进入视频全屏
                 Log.d(Constant.TAG, mClassName + " onShowCustomView");
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // 横屏
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
                 mLlWeb.setVisibility(View.GONE);
                 mFlVideoContainer.setVisibility(View.VISIBLE);
@@ -506,7 +506,8 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
             public void onHideCustomView() {
                 // 退出视频全屏
                 Log.d(Constant.TAG, mClassName + " onHideCustomView");
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 竖屏
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED); // 默认值，系统根据方向感应自动选择屏幕方向
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
                 mLlWeb.setVisibility(View.VISIBLE);
                 mFlVideoContainer.setVisibility(View.GONE);
