@@ -17,6 +17,7 @@
     <!-- 主界面 -->
     <string name="main_web_view">包含所有功能的WebView</string>
     <string name="main_web_view_video">WebView播放视频并支持全屏</string>
+    <string name="main_web_view_upload">WebView拍照和上传文件</string>
     <string name="main_no_tel">该设备没有电话功能</string>
     <string name="main_no_sms">该设备没有短信功能</string>
     <string name="main_no_mail">该设备没有邮箱功能</string>

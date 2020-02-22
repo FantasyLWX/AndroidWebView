@@ -13,7 +13,7 @@ import com.fantasy.androidwebview.base.BaseActivity;
  * 主界面
  * <pre>
  *     author  : Fantasy
- *     version : 1.3, 2020-02-13
+ *     version : 1.4, 2020-02-22
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -40,6 +40,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.cd_main_web_view).setOnClickListener(this);
         findViewById(R.id.cd_main_clear_cache).setOnClickListener(this);
         findViewById(R.id.cd_main_web_view_video).setOnClickListener(this);
+        findViewById(R.id.cd_main_web_view_upload).setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +62,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.cd_main_web_view_video:
                 VideoActivity.actionStart(mContext, "http://www.iqiyi.com");
+                break;
+            case R.id.cd_main_web_view_upload:
+                UploadActivity.actionStart(mContext, "file:///android_asset/upload.html");
                 break;
             default:
                 break;
