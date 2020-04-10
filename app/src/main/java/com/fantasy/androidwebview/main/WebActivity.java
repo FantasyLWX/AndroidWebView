@@ -68,7 +68,7 @@ import java.util.Locale;
  * 包含所有功能的WebView
  * <pre>
  *     author  : Fantasy
- *     version : 1.1, 2020-02-13
+ *     version : 1.2, 2020-04-10
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -655,7 +655,6 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                 requestPermissions(permissions, new PermissionListener() {
                     @Override
                     public void onGranted() {
-                        Log.d(Constant.TAG, mClassName + " toRequestCameraPermission onGranted all");
                         switch (code) {
                             case REQUEST_CODE_SCAN:
                                 toScan();
@@ -668,25 +667,10 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
 
                     @Override
                     public void onGranted(List<String> grantedList) {
-                        StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < grantedList.size(); i++) {
-                            sb.append(i);
-                            sb.append(" : ");
-                            sb.append(grantedList.get(i));
-                        }
-                        Log.d(Constant.TAG, mClassName + " toRequestCameraPermission onGranted " + sb.toString());
                     }
 
                     @Override
                     public void onDenied(List<String> deniedList) {
-                        StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < deniedList.size(); i++) {
-                            sb.append(i);
-                            sb.append(" : ");
-                            sb.append(deniedList.get(i));
-                        }
-                        Log.d(Constant.TAG, mClassName + " toRequestCameraPermission onDenied " + sb.toString());
-
                         if (ActivityCompat.shouldShowRequestPermissionRationale(WebActivity.this, Manifest.permission.CAMERA)) {
                             toRequestCameraPermission(code);
                         } else {
@@ -760,31 +744,15 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                     requestPermissions(permissions, new PermissionListener() {
                         @Override
                         public void onGranted() {
-                            Log.d(Constant.TAG, mClassName + " toRequestLocationPermission onGranted all");
                             mGeolocationPermissionsCallback.invoke(mGeolocationPermissionsOrigin, true, false);
                         }
 
                         @Override
                         public void onGranted(List<String> grantedList) {
-                            StringBuilder sb = new StringBuilder();
-                            for (int i = 0; i < grantedList.size(); i++) {
-                                sb.append(i);
-                                sb.append(" : ");
-                                sb.append(grantedList.get(i));
-                            }
-                            Log.d(Constant.TAG, mClassName + " toRequestLocationPermission onGranted " + sb.toString());
                         }
 
                         @Override
                         public void onDenied(List<String> deniedList) {
-                            StringBuilder sb = new StringBuilder();
-                            for (int i = 0; i < deniedList.size(); i++) {
-                                sb.append(i);
-                                sb.append(" : ");
-                                sb.append(deniedList.get(i));
-                            }
-                            Log.d(Constant.TAG, mClassName + " toRequestLocationPermission onDenied " + sb.toString());
-
                             if (ActivityCompat.shouldShowRequestPermissionRationale(WebActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)
                                     && ActivityCompat.shouldShowRequestPermissionRationale(WebActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                                 toRequestLocationPermission();

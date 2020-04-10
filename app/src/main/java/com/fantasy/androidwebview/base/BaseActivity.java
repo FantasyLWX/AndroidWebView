@@ -26,7 +26,7 @@ import java.util.List;
  * 活动基础类
  * <pre>
  *     author  : Fantasy
- *     version : 1.0, 2020-01-08
+ *     version : 1.0, 2020-04-10
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -355,15 +355,19 @@ public class BaseActivity extends AppCompatActivity {
                 for (int i = 0; i < grantResults.length; i++) {
                     int grantResult = grantResults[i];
                     if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                        Log.d(Constant.TAG, mClassName + " denied : " + permissions[i]);
                         deniedList.add(permissions[i]);
                     } else {
+                        Log.d(Constant.TAG, mClassName + " granted : " + permissions[i]);
                         grantedList.add(permissions[i]);
                     }
                 }
 
                 if (deniedList.isEmpty()) {
+                    Log.d(Constant.TAG, mClassName + " requestPermissions onGranted all");
                     mPermissionListener.onGranted();
                 } else {
+                    Log.d(Constant.TAG, mClassName + " requestPermissions onDenied");
                     mPermissionListener.onDenied(deniedList);
                     mPermissionListener.onGranted(grantedList);
                 }

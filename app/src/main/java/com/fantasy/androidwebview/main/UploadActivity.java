@@ -281,31 +281,15 @@ public class UploadActivity extends BaseActivity implements View.OnClickListener
                 requestPermissions(permissions, new PermissionListener() {
                     @Override
                     public void onGranted() {
-                        Log.d(Constant.TAG, mClassName + " toRequestCameraPermission onGranted all");
                         toOpenFileChooserAnother();
                     }
 
                     @Override
                     public void onGranted(List<String> grantedList) {
-                        StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < grantedList.size(); i++) {
-                            sb.append(i);
-                            sb.append(" : ");
-                            sb.append(grantedList.get(i));
-                        }
-                        Log.d(Constant.TAG, mClassName + " toRequestCameraPermission onGranted " + sb.toString());
                     }
 
                     @Override
                     public void onDenied(List<String> deniedList) {
-                        StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < deniedList.size(); i++) {
-                            sb.append(i);
-                            sb.append(" : ");
-                            sb.append(deniedList.get(i));
-                        }
-                        Log.d(Constant.TAG, mClassName + " toRequestCameraPermission onDenied " + sb.toString());
-
                         if (ActivityCompat.shouldShowRequestPermissionRationale(UploadActivity.this, Manifest.permission.CAMERA)) {
                             toRequestCameraPermission();
                         } else {
