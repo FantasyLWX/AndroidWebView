@@ -36,7 +36,6 @@ public class ClearCacheActivity extends BaseActivity implements View.OnClickList
     }
 
     private void bindEvent() {
-        findViewById(R.id.iv_title_bar_back).setVisibility(View.GONE);
         ((TextView) findViewById(R.id.tv_title_bar_title)).setText(R.string.clear_cache_title);
         findViewById(R.id.iv_title_bar_back).setOnClickListener(this);
         findViewById(R.id.btn_clear_cache).setOnClickListener(this);
