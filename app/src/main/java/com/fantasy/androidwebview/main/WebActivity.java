@@ -53,6 +53,7 @@ import com.fantasy.androidwebview.utils.DirUtils;
 import com.fantasy.androidwebview.utils.DownloadAsyncTask;
 import com.fantasy.androidwebview.utils.IntentHelper;
 import com.fantasy.androidwebview.utils.PreferencesUtils;
+import com.fantasy.androidwebview.utils.TextHelper;
 import com.fantasy.androidwebview.utils.WebViewUtils;
 import com.fantasy.androidwebview.utils.file.OpenFileHelper;
 
@@ -68,7 +69,7 @@ import java.util.Locale;
  * 包含所有功能的WebView
  * <pre>
  *     author  : Fantasy
- *     version : 1.2, 2020-04-10
+ *     version : 1.3, 2020-04-30
  *     since   : 1.0, 2020-01-07
  * </pre>
  */
@@ -933,7 +934,8 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                 if (resultCode == RESULT_OK) {
                     String data = intent.getStringExtra(Constant.EXTRA_DATA);
                     Log.d(Constant.TAG, mClassName + " scan result : " + data);
-                    data = data.replace("'", "\\'");
+                    data = TextHelper.handleJSFunctionParams(data);
+                    Log.d(Constant.TAG, mClassName + " scan handle result : " + data);
                     mWebView.evaluateJavascript("javascript:scanResult('" + data + "')", null);
                 }
                 break;
