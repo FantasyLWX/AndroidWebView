@@ -54,6 +54,7 @@ public class TextHelper {
      */
     public static String handleJSFunctionParams(String params) {
         return params.replace("'", "\\'")
+                .replace("\"", "\\\"")
                 .replace("\n", "\\n");
     }
 

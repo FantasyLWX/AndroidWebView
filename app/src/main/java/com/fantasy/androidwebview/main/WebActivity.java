@@ -937,6 +937,7 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                     data = TextHelper.handleJSFunctionParams(data);
                     Log.d(Constant.TAG, mClassName + " scan handle result : " + data);
                     mWebView.evaluateJavascript("javascript:scanResult('" + data + "')", null);
+                    //mWebView.evaluateJavascript("javascript:scanResult(\"" + data + "\")", null);
                 }
                 break;
             case REQUEST_CODE_PHOTO_UPLOAD:
